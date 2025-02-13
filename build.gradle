@@ -24,7 +24,7 @@ allprojects {
 
 task joernTools(type: Exec) {
     workingDir './python/joern-tools'
-    commandLine 'python3', 'setup.py', 'install', '--user'
+    commandLine 'python3', '-m', 'venv', './venv', '&&', 'source', './venv/bin/activate', '&&', 'pip', 'install', '--upgrade', 'setuptools', 'pygraphviz', 'chardet', '&&', 'python3', 'setup.py', 'install', '--user'
 }
 
 // Copy extensions and plugins into Octopus plugin directory
